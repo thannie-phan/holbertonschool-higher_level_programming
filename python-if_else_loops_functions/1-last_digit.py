@@ -6,7 +6,7 @@ str1 = 'Last digit of'
 str2 = 'is'
 last_digit = abs(number) % 10
 
-if last_digit < 0:
+if number < 0:
     last_digit = -last_digit
 
 if last_digit > 5:
