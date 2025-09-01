@@ -4,5 +4,5 @@ for first_digit in range(10):
         if first_digit != second_digit:
             current_number = first_digit * 10 + second_digit
             if current_number < 88:
-                print('{:02}'. format(current_number), end=', ')
+                print('{:02}'.format(current_number), end=', ')
 print('89')
