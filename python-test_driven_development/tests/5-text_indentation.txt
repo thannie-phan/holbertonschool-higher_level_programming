@@ -36,11 +36,8 @@ Tests:
     Test5 - text has all 3 delimeters
     >>> text_indentation('Holberton. School? How are you: John')
     Holberton.
-
     School?
-
     How are you:
-
     John
 
 
