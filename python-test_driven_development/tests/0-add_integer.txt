@@ -1,0 +1,45 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+# 1. simple pos integers
+>>> add_integer(1, 2)
+3
+
+# 2. pos + neg integer
+>>> add_integer(100, -2)
+98
+
+# 3. only a (default b=98)
+>>> add_integer(2)
+100
+
+# 4. float cast to int
+>>> add_integer(100.3, -2)
+98
+
+# 5. wrong type for b raises TypeError
+>>> add_integer(4, 'School')
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+# 6. wrong type for a raises TypeError
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+# 7. very large integer
+>>> add_integer(1234567890,1)
+1234567891
+
+# 8. cannot convert float not a number NaN to int
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
+
+# 9. cannot convert float infinity to int
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
