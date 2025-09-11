@@ -26,10 +26,21 @@ Tests:
 
     Test4 - text is blank
     >>> text_indentation(' ')
-     
 
     Test5 - text is empty
     >>> text_indentation()
     Traceback (most recent call last):
     ...
     TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+    Test5 - text has all 3 delimeters
+    >>> text_indentation('Holberton. School? How are you: John')
+    Holberton.
+
+     School?
+
+     How are you:
+
+     John
+
+
