@@ -30,4 +30,3 @@ def text_indentation(text):
                     char += 1
                 continue
         char += 1
-        
