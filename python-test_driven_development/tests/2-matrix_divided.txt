@@ -1,0 +1,40 @@
+The ``matrix_divided`` module
+======================
+
+Using ``matrix_divided``
+-------------------
+
+First import ``matrix_divided`` from the ``2-matrix_divided`` file:
+
+    >>> divide = __import__('2-matrix_divided').matrix_divided
+
+Tests:
+    Test1 - simple divide
+    >>> divide(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+    Test2 - divide by 0
+    >>> divide(matrix, 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+    Test3 - div is not int
+    >>> divide(matrix, 'haha')
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+    Test4 - each row of matrix is not the same size
+    >>> matrix = [[1, 2, 3], [4, 5]]
+    >>> divide(matrix, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+    Test5 - matrix contains str
+    >>> matrix = [[1, 2, 3], [4, 5, 'haha']]
+    >>> divide(matrix, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
