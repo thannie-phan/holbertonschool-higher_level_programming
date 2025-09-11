@@ -22,6 +22,7 @@ def matrix_divided(matrix, div):
             raise TypeError(error_msg)
         if len(matrix[row]) != len(matrix[0]):
             raise TypeError('Each row of the matrix must have the same size')
+        new_row = []
         for col in range(len(matrix[row])):
             if not isinstance(matrix[row][col], (int, float)):
                 raise TypeError(error_msg)
@@ -32,5 +33,6 @@ def matrix_divided(matrix, div):
             else:
                 value = matrix[row][col] / div
                 format_value = float('{:.2f}'.format(value))
-            result.append(format_value)
+            new_row.append(format_value)
+        result.append(new_row)
     return result
