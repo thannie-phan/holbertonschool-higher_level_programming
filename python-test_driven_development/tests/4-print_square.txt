@@ -21,7 +21,7 @@ Tests:
     ValueError: size must be >= 0
 
     Test3 - size is not an int
-    >>> print_square('hello)
+    >>> print_square('hello')
     Traceback (most recent call last):
     ...
     TypeError: size must be an integer
