@@ -15,6 +15,8 @@ def text_indentation(text):
     char = 0
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+    if text.strip() == "":
+        return
     delim_found = False
     while char < len(text):
         if text[char] == '.' or text[char] == '?' or text[char] == ':':
