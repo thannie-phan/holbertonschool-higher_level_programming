@@ -15,7 +15,6 @@ Tests:
     ####
     ####
     ####    
-
     Test2 - simple negative int size aka size < 0
     >>> print_square(-1)
     ValueError: size must be >= 0
