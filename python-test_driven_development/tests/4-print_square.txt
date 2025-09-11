@@ -16,8 +16,10 @@ Tests:
     ####
     ####
 
-    Test2 - simple negative int size aka size < 0
+    Test2 - size int less than 0
     >>> print_square(-1)
+    Traceback (most recent call last):
+    ...
     ValueError: size must be >= 0
 
     Test3 - size is not an int
