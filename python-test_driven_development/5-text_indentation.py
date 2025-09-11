@@ -15,14 +15,16 @@ def text_indentation(text):
     char = 0
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+    delim_found = False
     while char < len(text):
         if text[char] == '.' or text[char] == '?' or text[char] == ':':
-            print(text[char], end='')
-            print()
+            print(text[char])
+            delim_found = True
             char += 1
             while char < len(text) and text[char] == ' ':
                 char += 1
         else:
             print(text[char], end='')
             char += 1
-    print()
+    if delim_found:
+        print()
