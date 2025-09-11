@@ -16,7 +16,7 @@ Tests:
     Test2 - simple text with 1 delimeters
     >>> text_indentation('Holberton.School')
     Holberton.
-    
+
     School
 
     Test3 - text is not a string
@@ -37,8 +37,11 @@ Tests:
     Test6 - text has all 3 delimeters
     >>> text_indentation('Holberton. School? How are you: John')
     Holberton.
+
     School?
+
     How are you:
+    
     John
 
 
