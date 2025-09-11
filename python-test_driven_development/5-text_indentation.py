@@ -17,16 +17,12 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     if text.strip() == "":
         return
-    delim_found = False
     while char < len(text):
         if text[char] == '.' or text[char] == '?' or text[char] == ':':
             print(text[char])
-            delim_found = True
             char += 1
             while char < len(text) and text[char] == ' ':
                 char += 1
         else:
             print(text[char], end='')
             char += 1
-    if delim_found:
-        print()
