@@ -5,8 +5,8 @@
 class Square:
     """This class defines a square by its size."""
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -30,9 +30,13 @@ class Square:
     @position.setter
     def position(self, position):
         """Setter for the position attribute with validation."""
-        if (not isinstance(position, tuple) or len(position) != 2 or
-                not all(isinstance(num, int) for num in position) or
-                not all(num >= 0 for num in position)):
+        if not isinstance(position, tuple):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if len(position) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not all(isinstance(num, int) for num in position):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not all(num >= 0 for num in position):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
@@ -42,11 +46,11 @@ class Square:
 
     def my_print(self):
         """Prints the square using the '#' character."""
-        if self.__size == 0:
-            print("")
-
-        for empty_row in range(self.__position[1]):
-            print()
-        for each_row in range(self.__size):
-            print(' ' * self.__position[0], end='')
-            print('#' * self.__size)
+        try:
+            for empty_row in range(self.__position[1]):
+                    print()
+            for each_row in range(self.__size):
+                print(' ' * self.__position[0], end='')
+                print('#' * self.__size)
+        except Exception as e:
+            print(e)
