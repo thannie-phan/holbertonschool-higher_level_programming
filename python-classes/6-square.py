@@ -46,6 +46,10 @@ class Square:
 
     def my_print(self):
         """Prints the square using the '#' character."""
+        if self.__size == 0:
+            print("")
+            return
+
         try:
             for empty_row in range(self.__position[1]):
                     print()
