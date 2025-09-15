@@ -12,7 +12,7 @@ class Square:
     def size(self):
         """Getter for the size attribute."""
         return self.__size
-    
+
     @property
     def position(self):
         """Getter for the position attribute."""
@@ -52,7 +52,7 @@ class Square:
 
         try:
             for empty_row in range(self.__position[1]):
-                    print()
+                print()
             for each_row in range(self.__size):
                 print(' ' * self.__position[0], end='')
                 print('#' * self.__size)
