@@ -11,7 +11,7 @@ class Square:
     def size(self):
         """Getter for the size attribute."""
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """Setter for the size attribute with validation."""
