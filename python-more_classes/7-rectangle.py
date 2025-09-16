@@ -64,6 +64,8 @@ class Rectangle:
             if isinstance(self.print_symbol, list):
                 each_line = [str(self.print_symbol)] * self.__width
                 rectangle_line.append(''.join(each_line))
+            else:
+                rectangle_line.append(str(self.print_symbol) * self.__width)
         return '\n'.join(rectangle_line)
 
     def __repr__(self):

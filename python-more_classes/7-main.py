@@ -15,7 +15,7 @@ Rectangle.print_symbol = "C"
 print(my_rectangle_2)
 print("--")
 
-my_rectangle_3 = Rectangle(7, 3)
+my_rectangle_3 = Rectangle(8, 4)
 print(my_rectangle_3)
 
 print("--")
