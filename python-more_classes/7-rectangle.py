@@ -59,7 +59,7 @@ class Rectangle:
 
         rectangle_line = []
         each_line = []
-    
+
         for row in range(self.__height):
             if isinstance(self.print_symbol, list):
                 each_line = [str(self.print_symbol)] * self.__width
