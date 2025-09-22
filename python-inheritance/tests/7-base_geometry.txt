@@ -9,53 +9,41 @@ First import ``BaseGeometry`` from the ``7-base_geometry`` file:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 Tests:
-    Test1 - MyList inherits from list
-    >>> issubclass(MyList, list)
+    Test1 - bg is object of BaseGeometry
+    >>> bg = BaseGeometry()
+    >>> isinstance(bg, BaseGeometry)
     True
 
-    Test2 - check for empty list
-    >>> l = MyList()
-    >>> l.print_sorted()
-    []
+    Test2 - check area
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
 
-    Test3 - append works
-    >>> l.append(1)
-    >>> l.append(2)
-    >>> l.append(3)
-    >>> l.append(4)
-    >>> print(l)
-    [1, 2, 3, 4]
+    Test3 - check int validator
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", 12)
+    >>> print ("{} validated".format("my_int"))
+    my_int validated
 
-    Test4 - list already sorted
-    >>> l.print_sorted()
-    [1, 2, 3, 4]
+    Test4 - check int validator missing int
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age")
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-    Test5 - sorted input list
-    >>> l = MyList()
-    >>> l.append(4)
-    >>> l.append(3)
-    >>> l.append(2)
-    >>> l.append(1)
-    >>> print(l)
-    [4, 3, 2, 1]
-    >>> l.print_sorted()
-    [1, 2, 3, 4]
+    Test5 - check int validator with int = 0
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
 
-    Test6 - unsorted input with 1 negative number
-    >>> l.append(-1)
-    >>> l.append(5)
-    >>> print(l)
-    [4, 3, 2, 1, -1, 5]
-    >>> l.print_sorted()
-    [-1, 1, 2, 3, 4, 5]
-
-    Test7 - all negative numbers
-    >>> l = MyList()
-    >>> l.append(-5)
-    >>> l.append(-2)
-    >>> l.append(-1)
-    >>> l.append(-4)
-    >>> l.append(-3)
-    >>> l.print_sorted()
-    [-5, -4, -3, -2, -1]
-
+    Test6 - check int validator with int is a list
+        >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age",(4,))
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
