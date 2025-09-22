@@ -1,8 +1,8 @@
 The ``print_sorted`` module
-======================
+===========================
 
 Using ``print_sorted``
--------------------
+----------------------
 
 First import ``MyList`` from the ``1-my_list`` file:
 
@@ -41,7 +41,7 @@ Tests:
     >>> l.print_sorted()
     [1, 2, 3, 4]
 
-    Test6 - unsorted input with 1 -ve num
+    Test6 - unsorted input with 1 negative number
     >>> l.append(-1)
     >>> l.append(5)
     >>> print(l)
@@ -49,7 +49,7 @@ Tests:
     >>> l.print_sorted()
     [-1, 1, 2, 3, 4, 5]
 
-    Test7 - all -ve num
+    Test7 - all negative numbers
     >>> l = MyList()
     >>> l.append(-5)
     >>> l.append(-2)
@@ -58,3 +58,4 @@ Tests:
     >>> l.append(-3)
     >>> l.print_sorted()
     [-5, -4, -3, -2, -1]
+
