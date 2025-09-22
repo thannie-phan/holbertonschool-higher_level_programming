@@ -10,15 +10,15 @@ First import ``MyList`` from the ``1-my_list`` file:
 
 Tests:
     Test1 - MyList inherits from list
-     >>> issubclass(MyList, list)
-	 True
+    >>> issubclass(MyList, list)
+    True
 
     Test2 - check for empty list
     >>> l = MyList()
     >>> l.print_sorted()
     []
 
-    Test2 - append works
+    Test3 - append works
     >>> l.append(1)
     >>> l.append(2)
     >>> l.append(3)
@@ -26,43 +26,43 @@ Tests:
     >>> print(l)
     [1, 2, 3, 4]
 
-    Test3 - list already sorted
+    Test4 - list already sorted
     >>> l.print_sorted()
     [1, 2, 3, 4]
 
-    Test4 - sorted input list
-	>>> l = MyList()
-	>>> l.append(4)
-	>>> l.append(3)
-	>>> l.append(2)
-	>>> l.append(1)
-	>>> print(l)
-	[4, 3, 2, 1]
-	>>> l.print_sorted()
-	[1, 2, 3, 4]
-	>>> print(l)
-	[4, 3, 2, 1]
-
-    Test5 - unsorted input with 1 -ve num
-	>>> l.append(-1)
-	>>> l.append(5)
-	>>> print(l)
-	[4, 3, 2, 1, -1, 5]
-	>>> l.print_sorted()
-	[-1, 1, 2, 3, 4, 5]
-	>>> print(l)
-	[4, 3, 2, 1, -1, 5]
-
-    Test6 - all -ve num
+    Test5 - sorted input list
     >>> l = MyList()
-	>>> l.append(-5)
-	>>> l.append(-2)
-	>>> l.append(-1)
-	>>> l.append(-4)
-	>>> l.append(-3)
-	>>> print(l)
-	[-5, -2, -1, -4, -3]
-	>>> l.print_sorted()
-	[-5, -4, -3, -2, -1]
-	>>> print(l)
-    [-10, -1, -7, -2, -8]
+    >>> l.append(4)
+    >>> l.append(3)
+    >>> l.append(2)
+    >>> l.append(1)
+    >>> print(l)
+    [4, 3, 2, 1]
+    >>> l.print_sorted()
+    [1, 2, 3, 4]
+    >>> print(l)
+    [4, 3, 2, 1]
+
+    Test6 - unsorted input with 1 -ve num
+    >>> l.append(-1)
+    >>> l.append(5)
+    >>> print(l)
+    [4, 3, 2, 1, -1, 5]
+    >>> l.print_sorted()
+    [-1, 1, 2, 3, 4, 5]
+    >>> print(l)
+    [4, 3, 2, 1, -1, 5]
+
+    Test7 - all -ve num
+    >>> l = MyList()
+    >>> l.append(-5)
+    >>> l.append(-2)
+    >>> l.append(-1)
+    >>> l.append(-4)
+    >>> l.append(-3)
+    >>> print(l)
+    [-5, -2, -1, -4, -3]
+    >>> l.print_sorted()
+    [-5, -4, -3, -2, -1]
+    >>> print(l)
+    [-5, -4, -3, -2, -1]
