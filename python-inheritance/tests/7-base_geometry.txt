@@ -1,0 +1,61 @@
+The ``integer_validator`` module
+===========================
+
+Using ``integer_validator``
+----------------------
+
+First import ``BaseGeometry`` from the ``7-base_geometry`` file:
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Tests:
+    Test1 - MyList inherits from list
+    >>> issubclass(MyList, list)
+    True
+
+    Test2 - check for empty list
+    >>> l = MyList()
+    >>> l.print_sorted()
+    []
+
+    Test3 - append works
+    >>> l.append(1)
+    >>> l.append(2)
+    >>> l.append(3)
+    >>> l.append(4)
+    >>> print(l)
+    [1, 2, 3, 4]
+
+    Test4 - list already sorted
+    >>> l.print_sorted()
+    [1, 2, 3, 4]
+
+    Test5 - sorted input list
+    >>> l = MyList()
+    >>> l.append(4)
+    >>> l.append(3)
+    >>> l.append(2)
+    >>> l.append(1)
+    >>> print(l)
+    [4, 3, 2, 1]
+    >>> l.print_sorted()
+    [1, 2, 3, 4]
+
+    Test6 - unsorted input with 1 negative number
+    >>> l.append(-1)
+    >>> l.append(5)
+    >>> print(l)
+    [4, 3, 2, 1, -1, 5]
+    >>> l.print_sorted()
+    [-1, 1, 2, 3, 4, 5]
+
+    Test7 - all negative numbers
+    >>> l = MyList()
+    >>> l.append(-5)
+    >>> l.append(-2)
+    >>> l.append(-1)
+    >>> l.append(-4)
+    >>> l.append(-3)
+    >>> l.print_sorted()
+    [-5, -4, -3, -2, -1]
+
