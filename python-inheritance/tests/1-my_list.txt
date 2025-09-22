@@ -1,59 +1,43 @@
-#!/usr/bin/python3
-"""Unittest for my_list([..])
-"""
-import unittest
-print_sorted = __import__('1-my_list').print_sorted
+The ``print_sorted`` module
+======================
 
-class TestMyList(unittest.TestCase):
-    """Class to test the print_sorted function"""
+Using ``print_sorted``
+-------------------
 
-def test_inheritance(self):
-        self.assertTrue(issubclass(MyList, list))
+First import ``MyList`` from the ``1-my_list`` file:
 
-    def test_instantiation(self):
-        my_list = MyList()
-        self.assertIsInstance(my_list, MyList)
+    >>> MyList = __import__('1-my_list').MyList
 
-    def test_append_and_str(self):
-        my_list = MyList()
-        my_list.append(10)
-        self.assertEqual(str(my_list), "[10]")
+Tests:
+    Test1 - instantiate empty list
+    >>> my_list = MyList()
+    >>> print(my_list)
+    []
 
-    def test_print_sorted_already_sorted(self):
-        my_list = MyList([1, 2, 3])
-        with StringIO() as buf, redirect_stdout(buf):
-            my_list.print_sorted()
-            output = buf.getvalue().strip()
-        self.assertEqual(output, "[1, 2, 3]")
+    Test2 - append and check original list
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> print(my_list)
+    [1, 4, 2]
 
-    def test_print_sorted_unsorted(self):
-        my_list = MyList([3, 1, 2])
-        with StringIO() as buf, redirect_stdout(buf):
-            my_list.print_sorted()
-            output = buf.getvalue().strip()
-        self.assertEqual(output, "[1, 2, 3]")
+    Test3 - use print_sorted on unsorted list
+    >>> my_list.print_sorted()
+    [1, 2, 4]
+    >>> print(my_list)
+    [1, 4, 2]
 
-    def test_print_sorted_with_negative(self):
-        my_list = MyList([3, -1, 2])
-        with StringIO() as buf, redirect_stdout(buf):
-            my_list.print_sorted()
-            output = buf.getvalue().strip()
-        self.assertEqual(output, "[-1, 2, 3]")
+    Test4 - sorted input list
+    >>> my_list2 = MyList([1, 2, 3])
+    >>> my_list2.print_sorted()
+    [1, 2, 3]
 
-    def test_print_sorted_empty_list(self):
-        my_list = MyList()
-        with StringIO() as buf, redirect_stdout(buf):
-            my_list.print_sorted()
-            output = buf.getvalue().strip()
-        self.assertEqual(output, "[]")
+    Test5 - unsorted input with negative numbers
+    >>> my_list3 = MyList([3, -1, 2])
+    >>> my_list3.print_sorted()
+    [-1, 2, 3]
 
-    def test_print_sorted_does_not_modify_original(self):
-        my_list = MyList([3, 1, 2])
-        original_copy = my_list.copy()
-        with StringIO() as buf, redirect_stdout(buf):
-            my_list.print_sorted()
-        self.assertEqual(my_list, original_copy)
-
-
-if __name__ == "__main__":
-    unittest.main()
+    Test6 - empty list
+    >>> my_list4 = MyList([])
+    >>> my_list4.print_sorted()
+    []
