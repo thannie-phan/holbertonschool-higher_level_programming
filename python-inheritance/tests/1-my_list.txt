@@ -9,35 +9,41 @@ First import ``MyList`` from the ``1-my_list`` file:
     >>> MyList = __import__('1-my_list').MyList
 
 Tests:
-    Test1 - instantiate empty list
-    >>> my_list = MyList()
-    >>> print(my_list)
+    Test1 - MyList inherits from list
+     >>> issubclass(MyList, list)
+	 True
+
+    Test2 - check for empty list
+    >>> l = MyList()
+    >>> l.print_sorted()
     []
 
-    Test2 - append and check original list
-    >>> my_list.append(1)
-    >>> my_list.append(4)
-    >>> my_list.append(2)
-    >>> print(my_list)
-    [1, 4, 2]
+    Test2 - append works
+    >>> l.append(1)
+    >>> l.append(2)
+    >>> l.append(3)
+    >>> l.append(4)
+    >>> print(l)
+    [1, 2, 3, 4]
 
-    Test3 - use print_sorted on unsorted list
-    >>> my_list.print_sorted()
-    [1, 2, 4]
-    >>> print(my_list)
-    [1, 4, 2]
+    Test3 - list already sorted
+    >>> l.print_sorted()
+    [1, 2, 3, 4]
 
     Test4 - sorted input list
-    >>> my_list2 = MyList([1, 2, 3])
-    >>> my_list2.print_sorted()
-    [1, 2, 3]
+	 >>> l = MyList()
+	 >>> l.append(4)
+	 >>> l.append(3)
+	 >>> l.append(2)
+	 >>> l.append(1)
+	 >>> print(l)
+	 [4, 3, 2, 1]
+	 >>> l.print_sorted()
+	 [1, 2, 3, 4]
+	 >>> print(l)
+	 [4, 3, 2, 1]
 
-    Test5 - unsorted input with negative numbers
+    Test5 - unsorted input with some -ve num
     >>> my_list3 = MyList([3, -1, 2])
     >>> my_list3.print_sorted()
     [-1, 2, 3]
-
-    Test6 - empty list
-    >>> my_list4 = MyList([])
-    >>> my_list4.print_sorted()
-    []
