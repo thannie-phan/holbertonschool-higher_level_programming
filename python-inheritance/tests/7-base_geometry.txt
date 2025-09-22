@@ -27,23 +27,58 @@ Tests:
     >>> print ("{} validated".format("my_int"))
     my_int validated
 
-    Test4 - check int validator missing int
+    Test4 - check int validator missing value
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("age")
     Traceback (most recent call last):
     ...
     TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-    Test5 - check int validator with int = 0
+    Test5 - check int validator with value = 0
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("age", 0)
     Traceback (most recent call last):
     ...
     ValueError: age must be greater than 0
 
-    Test6 - check int validator with int is a list
-        >>> bg = BaseGeometry()
+    Test6 - check int validator with value is a tuple
+    >>> bg = BaseGeometry()
     >>> bg.integer_validator("age",(4,))
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    Test7 - check int validator with value is a string
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age","4")
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    Test8 - check int validator with value is a list
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age",[3])
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    Test9 - check int validator with value is None
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    Test10 - check int validator with value is True
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    Test11 - check int validator with value is a dict
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("age", {3, 4})
     Traceback (most recent call last):
     ...
     TypeError: age must be an integer

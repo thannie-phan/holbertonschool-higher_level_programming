@@ -3,7 +3,7 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 bg = BaseGeometry()
 
-bg.integer_validator("age",(4,))
+bg.integer_validator("age", True)
 print ("{} validated".format("age"))
 
 try:
