@@ -3,8 +3,7 @@
 
 
 class BaseGeometry:
-    """This defines empty class base geometry. """
-    pass
+    """This defines class base geometry. """
 
     def area(self):
         """Raises an Exception with the message area() is
@@ -25,7 +24,7 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """This defines the rectangle."""
 
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
         self.__width = width
         self.__height = height
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
