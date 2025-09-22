@@ -3,8 +3,7 @@
 
 
 class BaseGeometry:
-    """This defines empty class base geometry. """
-    pass
+    """This defines class base geometry. """
 
     def area(self):
         """Raises an Exception with the message area() is
