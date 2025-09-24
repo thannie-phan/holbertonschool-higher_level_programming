@@ -23,4 +23,4 @@ class VerboseList(list):
         """ override pop."""
         item = self[index]
         print(f'Popped [{item}] from the list.')
-        super().pop(index)
+        return super().pop(index)
