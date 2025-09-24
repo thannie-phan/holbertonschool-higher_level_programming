@@ -28,7 +28,7 @@ class FlyingFish(Bird, Fish):
 
     def fly(self):
         """ abstract method fly."""
-        print('The flying fish is soaring')
+        print('The flying fish is soaring!')
     
     def habitat(self):
         """ abstract method habitat."""
@@ -36,4 +36,4 @@ class FlyingFish(Bird, Fish):
     
     def swim(self):
         """ abstract method swim."""
-        print('The flying fish is swimming')
+        print('The flying fish is swimming!')
