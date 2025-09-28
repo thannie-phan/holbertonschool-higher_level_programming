@@ -4,4 +4,4 @@ def read_file(filename=""):
     """This is a function to read content of file"""
     with open (filename) as file:
         content = file.read()
-        print(content)
+        print(content, end='')
