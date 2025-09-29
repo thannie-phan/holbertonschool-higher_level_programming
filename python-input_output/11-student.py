@@ -4,7 +4,6 @@
 
 class Student:
     """This defines class student. """
-    pass
 
     def __init__(self, first_name, last_name, age):
         """This defines attributes of a student obj."""
@@ -24,4 +23,5 @@ class Student:
     
     def reload_from_json(self, json):
         """replaces all attributes of the Student instance"""
-        self.__dict__ = json
+        for key, value in json.items():
+            setattr(self, key, value)
