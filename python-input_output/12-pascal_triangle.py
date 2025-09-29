@@ -7,21 +7,23 @@ def pascal_triangle(n):
     if n <= 0:
         return []
 
-    pascals_triangle = []
+    triangle = []
+    for current_row_index in range(n):
+        current_row = [1]
 
-    for row_number in range(n):
-        row_numbers = [1]
+        previous_row_index = current_row_index - 1
+        if previous_row_index >= 0:
+            previous_row = triangle[previous_row_index]
 
-        above_row_number = row_number - 1
-        if above_row_number >= 0:
-            row_above = pascals_triangle[above_row_number]
+            for position_in_row in range(1, current_row_index):
+                value = (
+                    previous_row[position_in_row - 1]
+                    + previous_row[position_in_row]
+                )
+                current_row.append(value)
 
-            for position_in_row_numbers in range(1, row_number):
-                number_to_add = row_above[position_in_row_numbers - 1] + row_above[position_in_row_numbers]
-                row_numbers.append(number_to_add)
+            current_row.append(1)
 
-            row_numbers.append(1)
+        triangle.append(current_row)
 
-        pascals_triangle.append(row_numbers)
-
-    return pascals_triangle
+    return triangle
