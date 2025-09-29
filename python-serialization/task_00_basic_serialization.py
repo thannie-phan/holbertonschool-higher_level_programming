@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module defines class student."""
+"""This module serialise and deserialise content."""
 
 
 import json
