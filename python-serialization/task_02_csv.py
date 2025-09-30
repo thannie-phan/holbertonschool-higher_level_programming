@@ -7,7 +7,8 @@ import json
 
 
 def convert_csv_to_json(filename):
-    
+    """Convert a CSV file to JSON format and write the result to data.json."""
+
     data = []
     try:
         with open(filename, 'r') as file:
