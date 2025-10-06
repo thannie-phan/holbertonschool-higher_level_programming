@@ -18,7 +18,7 @@ def fetch_and_print_posts():
         for post in posts:
             print(post['title'])
     else:
-            print('Failed to fetch post')
+        print('Failed to fetch post')
 
 def fetch_and_save_posts():
     """fetch and save post from json placeholder"""
