@@ -11,17 +11,17 @@ response = requests.get("https://jsonplaceholder.typicode.com/posts")
 
 
 def fetch_and_print_posts():
-    """fetch post from json placeholder"""
+    """fetch and print post from json placeholder"""
     print(f'Status code: {response.status_code}')
     if response.status_code == 200:
         posts = response.json()
         for post in posts:
             print(post['title'])
-        else:
+    else:
             print('Failed to fetch post')
 
 def fetch_and_save_posts():
-    """fetch post from json placeholder"""
+    """fetch and save post from json placeholder"""
     if response.status_code == 200:
         posts = response.json()
         posts_data = []
