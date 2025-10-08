@@ -47,7 +47,9 @@ def login():
         'username': username, 
         'role': user['role']
     }
-
+    if not identity_info:
+        return jsonify({"error": "Invalid credentials"}), 401
+    
     access_token = create_access_token(identity=identity_info)
 
     return jsonify({'access_token': access_token}), 200
