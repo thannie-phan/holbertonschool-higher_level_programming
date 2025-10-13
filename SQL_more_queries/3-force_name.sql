@@ -1,9 +1,7 @@
--- creates the database hbtn_0d_2 and the user user_0d_2
--- user only SELECT privilege in the database hbtn_0d_2
--- its pw should be set to user_0d_2_pwd
+-- creates table force_name with id INT and name VARCHAR(256) which cannot be NULL
 
-CREATE DATABASE IF NOT EXISTS hbtn_0c_02;
+CREATE TABLE IF NOT EXISTS force_name(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(256) NOT NULL
+);
 
-CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost' IDENTIFIED BY 'user_0d_2_pwd';
-
-GRANT SELECT ON hbtn_0d_2.* TO 'user_0d_2'@'localhost';
