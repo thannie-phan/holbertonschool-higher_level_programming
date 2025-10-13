@@ -2,7 +2,7 @@
 -- user only SELECT privilege in the database hbtn_0d_2
 -- its pw should be set to user_0d_2_pwd
 
-CREATE DATABASE IF NOT EXISTS hbtn_0d_2;
+CREATE DATABASE IF NOT EXISTS hbtn_0c_02;
 
 CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost' IDENTIFIED BY 'user_0d_2_pwd';
 
