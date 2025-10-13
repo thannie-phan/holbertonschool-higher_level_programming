@@ -1,6 +1,4 @@
--- list records of second_table in database hbtn_0c_0
--- ordered by score (top first)
--- only show those with score >= 10
+-- delete any records where score <= 5
 
 DELETE FROM second_table
 WHERE score <= 5
