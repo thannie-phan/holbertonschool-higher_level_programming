@@ -1,0 +1,9 @@
+-- lists all shows contained in hbtn_0d_tvshows that have at least one genre linked
+-- each record displays: tv_shows.title - tv_show_genres.genre_id
+-- we use left join so it shows all items on the left column even if that item value is NUll on the right column 
+
+SELECT tv_shows.title, tv_show_genres.genre_id
+FROM tv_shows
+LEFT JOIN tv_show_genres
+ON tv_shows.id = tv_show_genres.show_id
+ORDER BY tv_shows.title, tv_show_genres.genre_id;
