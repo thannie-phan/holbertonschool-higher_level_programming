@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""this is a python command to list all states in asc order by id"""
 
 import MySQLdb
 import sys
