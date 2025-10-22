@@ -23,7 +23,7 @@ def list_all_states():
     cursor = connection.cursor()
 
     # use cursor to do mysql order - select all states ordered by id
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY id ASC")
 
     # fetch and print
     all_states = cursor.fetchall()
