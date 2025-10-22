@@ -1,5 +1,9 @@
+#!/usr/bin/python3
+
+
 import MySQLdb
 import sys
+
 
 def list_all_states():
     """connect to mysql and lists all states in asc order by id."""
