@@ -28,7 +28,7 @@ def list_all_states():
 
     # use cursor to do mysql order - select all states ordered by id
     cursor.execute(
-        "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
+        "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC"
         .format(state_name)
         )
 
