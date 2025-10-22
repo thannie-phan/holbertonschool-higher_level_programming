@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-"""this is a python command to filter states"""
-
+"""this is a python command to list all states in asc order by id"""
 
 import MySQLdb
 import sys
 
 
 def list_all_states():
-    """connect to mysql and filter states."""
+    """connect to mysql and lists all states in asc order by id. BINARY forces a case-sensitive string comparison"""
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -24,9 +23,7 @@ def list_all_states():
     cursor = connection.cursor()
 
     # use cursor to do mysql order - select all states ordered by id
-    cursor.execute(
-        "SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY id ASC"
-        )
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
     # fetch and print
     all_states = cursor.fetchall()
@@ -40,3 +37,4 @@ def list_all_states():
 
 if __name__ == "__main__":
     list_all_states()
+
