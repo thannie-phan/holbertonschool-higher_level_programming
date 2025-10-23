@@ -6,7 +6,7 @@ import MySQLdb
 import sys
 
 
-def list_cities_by_states():
+def list_filter_cities():
     """connect to MySQL and list all cities from database"""
 
     username = sys.argv[1]
@@ -38,8 +38,8 @@ def list_cities_by_states():
         cursor.execute(query, (states_name,))
 
         rows = cursor.fetchall()
-        for row in rows:
-            print(row)
+        city_names = [row[1] for row in rows]
+        print(", ".join(city_names))
 
     except MySQLdb.Error as e:
         # log error
@@ -52,4 +52,4 @@ def list_cities_by_states():
 
 
 if __name__ == "__main__":
-    list_cities_by_states()
+    list_filter_cities()
