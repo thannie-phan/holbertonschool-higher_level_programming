@@ -21,8 +21,8 @@ if __name__ == "__main__":
     session = Session()
 
     state_to_delete = (
-        session.query(State)\
-        .filter(State.name.like('%a%'))\
+        session.query(State)
+        .filter(State.name.like('%a%'))
         .all()
     )
 
