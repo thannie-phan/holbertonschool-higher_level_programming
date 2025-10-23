@@ -6,7 +6,6 @@ import MySQLdb
 import sys
 from sqlalchemy import Column, Integer, String, create_engine, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base, relationship
-state = relationship('State')
 
 Base = declarative_base()
 
@@ -17,6 +16,8 @@ class City(Base):
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    state = relationship('State')
+
 
 
 if __name__ == "__main__":
