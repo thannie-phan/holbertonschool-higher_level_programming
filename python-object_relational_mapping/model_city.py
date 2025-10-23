@@ -7,9 +7,7 @@ import sys
 from sqlalchemy import Column, Integer, String, create_engine, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-
-Base = declarative_base()
-
+from model_state import Base
 
 class City(Base):
     """This is the class city"""
