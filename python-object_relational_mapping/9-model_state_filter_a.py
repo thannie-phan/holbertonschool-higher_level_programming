@@ -20,13 +20,17 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state_with_a = (
+    state_name = sys.argv[4]
+
+    state = (
         session.query(State)
-        .filter(State.name.like('%a%'))
-        .order_by(State.id).all()
+        .filter(State.name == state_name)
+        .first()
     )
 
-    for state in state_with_a:
-        print(f"{state.id}: {state.name}")
+    if state:
+        print(state.id)
+    else:
+        print('Not found')
 
     session.close()
