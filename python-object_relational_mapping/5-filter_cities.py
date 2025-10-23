@@ -6,12 +6,13 @@ import MySQLdb
 import sys
 
 
-def list_cities_safe():
+def list_cities_by_states():
     """connect to MySQL and list all cities from database"""
 
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
+    states_name = sys.argv[4]
 
     connect = None
     cursor = None
@@ -31,9 +32,10 @@ def list_cities_safe():
         SELECT cities.id, cities.name, states.name
         FROM cities
         JOIN states ON cities.state_id = states.id
+        WHERE states.name = %s
         ORDER BY cities.id ASC
         """
-        cursor.execute(query)
+        cursor.execute(query, (states_name,))
 
         rows = cursor.fetchall()
         for row in rows:
@@ -50,4 +52,4 @@ def list_cities_safe():
 
 
 if __name__ == "__main__":
-    list_cities_safe()
+    list_cities_by_states()
