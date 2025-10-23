@@ -9,6 +9,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from model_state import Base
 
+
 class City(Base):
     """This is the class city"""
     __tablename__ = 'cities'
@@ -16,7 +17,6 @@ class City(Base):
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
     state = relationship('State')
-
 
 
 if __name__ == "__main__":
