@@ -43,6 +43,6 @@ def safe_filter_states():
         if connect:
             connect.close()
 
+
 if __name__ == "__main__":
     safe_filter_states()
-
