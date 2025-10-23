@@ -7,7 +7,7 @@ from sqlalchemy import Column, Integer, String, create_engine, engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
-from model_cities import City
+from model_city import City
 
 if __name__ == "__main__":
 
