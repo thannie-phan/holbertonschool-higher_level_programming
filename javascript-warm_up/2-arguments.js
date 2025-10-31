@@ -4,6 +4,8 @@ const userArguments = process.argv.slice(2);
 
 if (userArguments.length === 0) {
   console.log('No argument');
+} else if (userArguments.length === 1) {
+  console.log('Argument found');
 } else {
   console.log('Arguments found');
 }
