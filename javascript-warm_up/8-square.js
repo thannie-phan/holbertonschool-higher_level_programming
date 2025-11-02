@@ -3,10 +3,10 @@ const firstArg = process.argv[2];
 const count = parseInt(firstArg);
 
 if (isNaN(count)) {
-  console.log('Missing number of occurrences');
+  console.log('Missing size');
 } else {
   let current = 0;
-  while (current < count) {
+  while (count < current) {
     console.log('C is fun');
     current++;
   }
