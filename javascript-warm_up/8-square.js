@@ -1,13 +1,13 @@
 #!/usr/bin/node
 const firstArg = process.argv[2];
-const count = parseInt(firstArg);
+const size = parseInt(firstArg);
 
-if (isNaN(count)) {
+if (isNaN(size)) {
   console.log('Missing size');
 } else {
-  let current = 0;
-  while (count < current) {
-    console.log('C is fun');
-    current++;
+  let row = 0;
+  while (row < size) {
+    console.log('X'.repeat(size)); // use repeat to get the number of X we need to print instead of writing another loop
+    row++;
   }
 }
