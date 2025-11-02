@@ -6,7 +6,7 @@ const convertedNumber = parseInt(firstArg);
 
 // if convertedNumber isNan aka is not a number
 if (isNaN(convertedNumber)) {
-    console.log('Not a number');
+  console.log('Not a number');
 } else {
-    console.log(`My number: ${convertedNumber}`);
+  console.log(`My number: ${convertedNumber}`);
 }
