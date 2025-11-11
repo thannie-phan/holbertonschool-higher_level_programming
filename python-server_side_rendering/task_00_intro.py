@@ -1,6 +1,7 @@
 import os
+from typing import List, Dict
 
-def generate_invitations(template: str, attendees: list[dict]):
+def generate_invitations(template: str, attendees: List[Dict]):
     if not isinstance(template, str):
         print("template must be a string")
         return
