@@ -61,7 +61,12 @@ def products():
         products = read_json(file_path)
     else:
         products = read_csv(file_path)
-
+    
+    if product_id:
+        product_id = int(product_id)
+        products = [p for p in products if p['id'] == product_id]
+        if not products:
+            return render_template('product_display.html', error='Product not found')
     return render_template('product_display.html', products=products)
     
 
