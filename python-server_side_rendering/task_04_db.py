@@ -45,7 +45,7 @@ def read_csv(file_path):
 def fetch_data_from_sqlite():
     conn = sqlite3.connect('products.db')
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM Product')
+    cursor.execute('SELECT * FROM Products')
     rows = cursor.fetchall()
     conn.close()
 
@@ -76,13 +76,13 @@ def products():
         products = fetch_data_from_sqlite()
     else:
         return render_template('product_display.html', error = 'Wrong source')
-    
-    if not os.path.exists(file_path):
-        return render_template('product_display.html', error = 'File not exists')
-    
+
+    if source != 'sql' and not os.path.exists(file_path):
+        return render_template('product_display.html', error="File not found")
+
     if source == 'json':
         products = read_json(file_path)
-    else:
+    elif source == 'csv':
         products = read_csv(file_path)
     
     if product_id:
@@ -95,7 +95,7 @@ def products():
             return render_template('product_display.html', error='Invalid id')
 
     return render_template('product_display.html', products=products)
-    
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
